@@ -92,7 +92,7 @@ function authenticate_user($dbconn, $username, $password) {
 		"SELECT
 		authors.id as id,
 		authors.username as username,
-		authors.password as password,
+		md5(authors.password) as password,
 		authors.role as role
 		FROM
 		authors
